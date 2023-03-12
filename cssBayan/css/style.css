@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin-top: 5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+body {
+  font-family: Arial;
+  line-height: 1.2;
+  background-color: antiquewhite;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 100rem;
+}
+
+input {
+  display: none;
+}
+
+img {
+  margin: auto;
+  display: none;
+}
+
+.row {
+  color: black;
+  margin-bottom: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.mem_name {
+  padding: 0.5rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  position: relative;
+}
+
+.border {
+  display: block;
+  height: 0.3rem;
+  width: 100%;
+  background-color: rgb(141, 238, 173);
+  margin-bottom: 1em;
+  border-radius: 0.3em;
+  transition: background-color 1s ease-in-out;
+}
+
+.row label::after {
+  transition: 1s;
+  content: '+';
+}
+
+.row img {
+  height: 20rem;
+  width: 20rem;
+  text-align: center;
+}
+
+input:checked + .mem_name {
+  color: rgb(62, 153, 92);
+}
+
+input:checked + .mem_name::after {
+  transform: rotate(135deg);
+}
+
+input:checked ~ img {
+  display: block;
+}
+
+@media screen and (min-width: 1200px) {
+  img {
+    width: 100%;
+  }
+
+  .container {
+    width: 40%;
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  input:hover ~ label {
+    color: rgb(9, 125, 48);
+  }
+}
